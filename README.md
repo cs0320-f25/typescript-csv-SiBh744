@@ -11,7 +11,8 @@
     Include a list of the top 4 enhancements or edge cases you think are most valuable to explore in the next week’s sprint. Label them clearly by category (extensibility vs. functionality), and include whether they came from you, the LLM, or both. Describe these using the User Story format—see below for a definition. 
 
     Functionality
-    1. As a user, I am able to input data that includes commas as long as they
+    1. User Story:
+    As a user, I am able to input data that includes commas as long as they
     are wrapped in quotes as per the convention. That way, I can input many
     different types of data.
     Acceptance Criteria:
@@ -21,7 +22,9 @@
     rather than starting a new one
 
     Extensability
-    2. As a user, I receive a warning requesting confirmation that I have
+    2. User Story:
+    
+    As a user, I receive a warning requesting confirmation that I have
     intentionally input a blank file or one with blank spots 
     Acceptance Criteria:
     - If the user inputs an empty CSV file, they receive notification of the
@@ -29,7 +32,8 @@
     - If they wish, they may proceed anyway with the input CSV file
 
     Extensability
-    3. As a user, I have the option of removing the header from the rest of the
+    3. User Story:
+    As a user, I have the option of removing the header from the rest of the
     file as I parse the CSV so that I can pass the data without any downstream
     complication
     Acceptance Criteria:
@@ -38,7 +42,8 @@
     - Accordingly, the header should be included or ignored in the final output
 
     Extensability
-    4. As a user, I have the ability to add type checking to my CSV so that I 
+    4. User Story:
+    As a user, I have the ability to add type checking to my CSV so that I 
     can validate that I am inputting the correct types of data
     Acceptance Criteria:
     - If a user inputs a file, they should be asked if the data is of some
