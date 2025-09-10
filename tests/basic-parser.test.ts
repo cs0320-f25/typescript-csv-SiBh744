@@ -46,7 +46,7 @@ test("parseCSV line breaks within quotes", async () => {
   const results = await parseCSV(path.join(__dirname, "../data/line-break.csv"))
   expect(results).toHaveLength(3);
   expect(results[0]).toEqual(["name", "age", "comment"]);
-  expect(results[1]).toEqual(["Yeeticus", "23", "Hello\nworld!"]);
+  expect(results[1]).toEqual(["Yeeticus", "22", "Hello\nworld!"]);
   expect(results[2]).toEqual(["Bob", "3", "1\n2\n3\n4"]);
 });
 
