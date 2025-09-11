@@ -22,7 +22,7 @@ test("parseCSV yields only arrays", async () => {
   }
 });
 
-test("parseCSV handles commas withing quotes", async () => {
+test("parseCSV handles commas within quotes", async () => {
   const results = await parseCSV(path.join(__dirname, "../data/commas.csv"))
   expect(results).toHaveLength(3);
   expect(results[0]).toEqual(["name", "age", "comment"]);

@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as readline from "readline";
+import z, { Schema, ZodType } from 'zod';
 
 /**
  * This is a JSDoc comment. Similar to JavaDoc, it documents a public-facing
@@ -12,26 +13,52 @@ import * as readline from "readline";
  * You shouldn't need to alter them.
  * 
  * @param path The path to the file being loaded.
+ * @param desiredSchema An optional Zod schema to validate each row against.
  * @returns a "promise" to produce a 2-d array of cell values
  */
-export async function parseCSV(path: string): Promise<string[][]> {
+export async function parseCSV<T>(path: string,
+  desiredSchema?: ZodType<T>): Promise<string[][]> {
   // This initial block of code reads from a file in Node.js. The "rl"
-  // value can be iterated over in a "for" loop. 
-  const fileStream = fs.createReadStream(path);
-  const rl = readline.createInterface({
-    input: fileStream,
-    crlfDelay: Infinity, // handle different line endings
-  });
-  
-  // Create an empty array to hold the results
-  let result = []
-  
-  // We add the "await" here because file I/O is asynchronous. 
-  // We need to force TypeScript to _wait_ for a row before moving on. 
-  // More on this in class soon!
-  for await (const line of rl) {
-    const values = line.split(",").map((v) => v.trim());
-    result.push(values)
+  // value can be iterated over in a "for" loop.
+  if (typeof desiredSchema === undefined) {
+    const fileStream = fs.createReadStream(path);
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity, // handle different line endings
+    });
+
+    // Create an empty array to hold the results
+    let result = []
+
+    // We add the "await" here because file I/O is asynchronous. 
+    // We need to force TypeScript to _wait_ for a row before moving on. 
+    // More on this in class soon!
+    for await (const line of rl) {
+      const values = line.split(",").map((v) => v.trim());
+      result.push(values)
+    }
+    return result
   }
-  return result
+
+  else {
+
+    const fileStream = fs.createReadStream(path);
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity, // handle different line endings
+    });
+
+    // Create an empty array to hold the results
+    let result = []
+
+    // We add the "await" here because file I/O is asynchronous. 
+    // We need to force TypeScript to _wait_ for a row before moving on. 
+    // More on this in class soon!
+    for await (const line of rl) {
+      const values = line.split(",").map((v) => v.trim());
+      desiredSchema?.parse(values);
+      result.push(values)
+    }
+    return result
+  }
 }
