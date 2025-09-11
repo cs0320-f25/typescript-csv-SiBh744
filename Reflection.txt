@@ -1,0 +1,35 @@
+1. Correctness
+To be correct a CSV parser should have the following features:
+- It should correctly accept user inputs assuming that the user stuck to CSV 
+  design specifications. For example, if they included a comma in quotes, that 
+  comma should carry over to the parsed output. Similarly, line breaks should be
+  accommodated
+- The parser should never change user inputs without specific user direction
+  (such as in the form of a schema); it should warn users if inputs are invalid
+  (like a string where an int should be).
+- It should be capable of processing empty fields as indicated by ,,
+- The parser should provide a message to the user if it breaks for whatever
+  reason or cannot handle the user inputs
+- The parser should warn users if it detects suspicious properties that might
+  indicate problems in the CSV such as an empty file or empty field or mismatch
+  in columns
+- The parser should be consistent in its output if it receives the same inputs
+
+2. Random Generation
+This would rapidly boost the potential for me to thoroughly test the program as
+the inherent randomness would help me avoid availability bias. While I would be 
+able to test the program under circumstances that I could fathom, this random
+generator might be better equipped to come up with rare edge-cases that I might 
+not have considered. By varying its length, this generator would also be able to
+track performance over extened periods/long fields
+
+3.
+This sprint differed from prior assignments in its relatively open-ended nature.
+Previously, I have been given tighter specifications and clearer objectives, so 
+it was a bit challenging to have work around this. I was mildly surprised by the
+differences between type script and java, and I expected the two languages to be
+ a lot more similar. Ultimately, I think I will be able to get the hang of type 
+script as the class goes on. I did not encounter any bugs on this assignment. I 
+think this is mainly attributable to the relative simplicity of the sprint. I am
+sure that as the sprints go on, I will begin to encounter more bugs and will 
+have to carefully navigate them.

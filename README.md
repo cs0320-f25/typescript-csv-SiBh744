@@ -71,11 +71,22 @@
 
 - #### 3. Overall experience, Bugs encountered and resolved
 #### Errors/Bugs:
+The program remains incapable of handling commas in deta or line breaks in the
+data. I chose not to address these because of the directions on the Sprint. I
+initially had some difficulty trying to get my parser function to work with both
+a schema and no schema, but looking at 3rd lecture notes reminded me of options
+and so I verified that I could indeed use them
 #### Tests:
+I tried 
 #### How To…
+To run the run-parser.ts file, I used 'npx ts-node ./src/run-parser.ts'. This
+ran the program on the sample people.csv file and printed the results to the
+terminal. To test the code, I placed my tests in the basic-parser.test.ts file
+and used the 'npm test' command.
 
 #### Team members and contributions (include cs logins):
 
 #### Collaborators (cslogins of anyone you worked with on this project and/or generative AI):
-#### Total estimated time it took to complete project:
+I asked ChatGPT for the section that invovles asking an LLM for its approach. 
+#### Total estimated time it took to complete project: 7 hours
 #### Link to GitHub Repo:  
