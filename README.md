@@ -88,6 +88,8 @@ and used the 'npm test' command.
 
 #### Collaborators (cslogins of anyone you worked with on this project and/or generative AI):
 I asked ChatGPT for the section that invovles asking an LLM for its approach. 
+I worked with Alan Lin to conceptualize some of the broad ideas. I unfortunately
+realized that I forgot to note his login.
 #### Total estimated time it took to complete project: 7 hours
 #### Link to GitHub Repo:  
 https://github.com/cs0320-f25/typescript-csv-SiBh744
